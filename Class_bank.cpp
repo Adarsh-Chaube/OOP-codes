@@ -29,6 +29,7 @@ class Bank
             cout<<"Enter the amount to be deposited : ";
             cin>>amt;
             balance+=amt;
+            cout<<"Amount is successfully deposited.\nThe available balance is : "<<balance<<'\n';
         }
         void withdraw()
         {
@@ -60,9 +61,30 @@ class Bank
 int main()
 {
     Bank b;
-    b.deposit();
-    b.withdraw();
-    b.check_balance();
-    b.update_address();
+    int c;
+    do
+    {
+        cout<<"Enter : 1-For making a deposit\n2-For making a withdrawal\n3-For checking balance\n4-For updating address\n5-For exiting the interface\nEnter your choice : ";
+        cin>>c;
+        switch (c)
+        {
+            case 1:
+                b.deposit();
+                break;
+            case 2:
+                b.withdraw();
+                break;
+            case 3:
+                b.check_balance();
+                break;
+            case 4:
+                b.update_address();
+                break;
+            case 5:
+                break;
+            default:
+                cout<<"invalid choice";
+        }
+    }while(c!=5);
     return 0;
 }
